@@ -1,8 +1,12 @@
-radio.onReceivedNumber(function on_received_number(receivedNumber: number) {
+radio.onReceivedNumber(function (receivedNumber) {
     pins.digitalWritePin(DigitalPin.P0, receivedNumber)
     basic.showIcon(IconNames.Happy)
+    music._playDefaultBackground(music.builtInPlayableMelody(Melodies.JumpUp), music.PlaybackMode.InBackground)
     basic.pause(2000)
     pins.digitalWritePin(DigitalPin.P0, 0)
 })
 radio.setGroup(12)
+basic.showIcon(IconNames.Yes)
+music._playDefaultBackground(music.builtInPlayableMelody(Melodies.PowerUp), music.PlaybackMode.InBackground)
+basic.showString("Mottaker")
 basic.showIcon(IconNames.Yes)
